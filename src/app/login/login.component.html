@@ -1,0 +1,41 @@
+<body *ngIf="showLogin">
+  <div class="login-page">
+    <div class="form">
+      <div class="login">
+        <div class="login-header">
+          <h3>EKART</h3>
+          <p>Please enter your credentials to login.</p>
+        </div>
+      </div>
+      <form #customerLogin="ngForm" (ngSubmit)="login(customerLogin.value)" class="login-form">
+        <input type="text" ngModel name="mobile" placeholder="mobile" />
+        <input type="password" ngModel name="password" placeholder="password" />
+        <button>login</button>
+        <p class="message">Not registered? <a (click)="openSignUp()">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+
+<!--signUp area-->
+
+<body *ngIf="!showLogin">
+  <div class="login-page">
+    <div class="form">
+      <div class="login">
+        <div class="login-header">
+          <h3>EKART</h3>
+          <p>Please enter your credentials to register.</p>
+        </div>
+        <form #customerSignUp="ngForm" (ngSubmit)="signUp(customerSignUp.value)" class="login-form">
+          <input type="text" ngModel name="name" placeholder="name" />
+          <input type="text" ngModel name="mobile" placeholder="mobile" />
+          <input type="email" ngModel name="email" placeholder="email" />
+          <input type="password" ngModel name="password" placeholder="password" />
+          <button>Sign Up</button>
+          <p class="message">Already registered? <a (click)="openLogin()">Login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
