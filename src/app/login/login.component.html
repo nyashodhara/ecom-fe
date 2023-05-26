@@ -11,6 +11,9 @@
         <input type="text" ngModel name="mobile" placeholder="mobile" />
         <input type="password" ngModel name="password" placeholder="password" />
         <button>login</button>
+        <div *ngIf="showErrorMessage">
+          <p class="error">Invalid username and password Please try again!</p>
+        </div>
         <p class="message">Not registered? <a (click)="openSignUp()">Create an account</a></p>
       </form>
     </div>
@@ -33,6 +36,9 @@
           <input type="email" ngModel name="email" placeholder="email" />
           <input type="password" ngModel name="password" placeholder="password" />
           <button>Sign Up</button>
+          <div *ngIf="showErrorMessage">
+            <p class="error">Failed to register!</p>
+          </div>
           <p class="message">Already registered? <a (click)="openLogin()">Login</a></p>
         </form>
       </div>

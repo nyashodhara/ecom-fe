@@ -8,3 +8,8 @@ export interface signUp{
     email:String,
     password:String
 }
+
+export const environment = {
+    production: false,
+    apiUrl: 'https://ecomproject-production.up.railway.app/'
+  };

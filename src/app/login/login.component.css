@@ -69,6 +69,11 @@ header .header{
     max-width: 300px;
     margin: 0 auto;
   }
+
+  .form .error {
+    margin: 15px 0 0;
+    color: red;
+  }
   
   /*body {
     background-color: #328f8a;

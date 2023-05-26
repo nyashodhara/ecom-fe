@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private onboard:OnboardService,private router:Router) { }
   showLogin = true
+  showErrorMessage = false;
 
   ngOnInit(): void {
     this.onboard.reloadHome();
@@ -20,11 +21,15 @@ export class LoginComponent implements OnInit {
   login(data:login):void{
     console.log(data);
     this.onboard.userLogin(data);
+    this.showErrorMessage = this.onboard.showError;
+    console.log(this.showErrorMessage);
   }
 
   signUp(data:signUp):void{
     console.log(data);
     this.onboard.userSignUp(data);
+    this.showErrorMessage = this.onboard.showError;
+    console.log(this.showErrorMessage);
   }
 
   openLogin(){
