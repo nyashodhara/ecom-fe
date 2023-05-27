@@ -1,16 +1,16 @@
 <nav class="navbar">
-<div class="nav">
-    <img src="../assets/images/logo.png" class="brand-logo" alt="">
-    <div class="nav-items">
-        <div class="search">
-            <input type="text" class="search-box" placeholder="search brand, product">
-            <button class="search-btn">search</button>
+    <div class="nav">
+        <img src="../assets/images/logo.png" class="brand-logo" alt="">
+        <div class="nav-items">
+            <div class="search">
+                <input type="text" class="search-box" placeholder="search brand, product">
+                <button class="search-btn">search</button>
+            </div>
+            <a href="#"><img src="../assets/images/user.png" alt=""></a>
+            <a href="#"><img src="../assets/images/cart.png" alt=""></a>
+            <a (click)="logout()" class="button">logout</a>
         </div>
-        <a href="#"><img src="../assets/images/user.png" alt=""></a>
-        <a href="#"><img src="../assets/images/cart.png" alt=""></a>
-        <a (click)="logout()" class="button">logout</a>
     </div>
-</div>
 </nav>
 
 <ul class="links-container">
@@ -21,3 +21,18 @@
     <li class="link-item"><a (click)="logout()" class="link">accessories</a></li>
 </ul>
 
+<div class="listing-section">
+    <div class="product" *ngFor="let item of products">
+        <div class="image-box">
+            <div class="images">
+                <img src="{{item.images}}" />
+            </div>
+        </div>
+        <div class="text-box">
+            <h2 class="item">{{item.name}}</h2>
+            <p class="price">Rs: {{item.price}}</p>
+            <p class="description">{{item.name}}</p>
+            <button type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
+        </div>
+    </div>
+</div>

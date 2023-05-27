@@ -26,6 +26,9 @@ export class OnboardService {
           this.showError = true;
         }
       }
+      else{
+        console.log("cors");
+      }
       console.log(result);
     });;
   }
