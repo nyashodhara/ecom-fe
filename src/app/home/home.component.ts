@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private route:Router,private homeService:HomeService) { }
   products:product[] | undefined;
+  name:String='';
 
   ngOnInit(): void {
     this.homeService.getProducts().subscribe((result:any)=>{
@@ -19,6 +20,11 @@ export class HomeComponent implements OnInit {
       this.products=result.body.data;
       console.log(this.products)
     })
+    if(localStorage.getItem('auth')){
+      let profile = localStorage.getItem('auth');
+      let profileData = profile && JSON.parse(profile);
+      this.name = profileData.data.name;
+    }
   }
 
   logout(){
